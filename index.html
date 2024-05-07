@@ -690,6 +690,58 @@ Thank you for visiting my page, and I look forward to connecting with you!
   <script src="assets/js/main.js"></script>
   <script src="assets/js/main copy.js"></script>
 
+
+  <style>
+        /* Style for floating WhatsApp button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px; /* Changed position to left */
+            z-index: 9999;
+            background-color: #25d366; /* WhatsApp green color */
+            color: #fff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            font-size: 24px;
+            line-height: 60px;
+            cursor: pointer;
+            transition: transform 0.3s ease; /* Added transition for hover effect */
+        }
+        
+        /* Hover effect */
+        .whatsapp-button:hover {
+            transform: scale(1.1); /* Increase size on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating WhatsApp button -->
+    <div class="whatsapp-button" onclick="openWhatsApp()">
+        <span class="fab fa-whatsapp"></span> <!-- Font Awesome WhatsApp icon -->
+    </div>
+
+    <!-- Include Font Awesome for WhatsApp icon -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+    <script>
+        // Function to open WhatsApp chat with AI bot
+        function openWhatsApp() {
+            // Replace 'YOUR_WHATSAPP_NUMBER' with your actual WhatsApp Business API number
+            var phoneNumber = '+919064504681';
+            // AI message to be sent to the user
+            var message = 'Hello! I got your WhatsApp number from your website!';
+            // Encode message for URL
+            var encodedMessage = encodeURIComponent(message);
+            // Construct WhatsApp API URL
+            var url = 'https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodedMessage;
+            // Open WhatsApp chat window
+            window.open(url, '_blank');
+        }
+    </script>
+
 </body>
 
 </html>
